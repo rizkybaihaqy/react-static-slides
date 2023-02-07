@@ -1,0 +1,27 @@
+{
+  "name": "css-spa",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "render": "npm run clean && tsc && node dist/render.js"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.19",
+    "@types/prettier": "^2.7.2",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "prettier": "^2.8.3",
+    "ramda": "^0.28.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "@types/ramda": "^0.28.22"
+  }
+}
