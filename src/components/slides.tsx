@@ -1,5 +1,7 @@
-import React, { isValidElement, ReactElement, ReactNode } from "react";
+import React from "react";
+import { End } from "./end.js";
 import { Navigation } from "./navigation.js";
+import { Start } from "./start.js";
 
 export const Slides = ({ children }: { children: JSX.Element[] }) => {
   return (
@@ -9,22 +11,29 @@ export const Slides = ({ children }: { children: JSX.Element[] }) => {
           <section id={child.type.name.toLowerCase()} key={i}>
             {child}
             <Navigation
-              prev={children[i - 1]?.type.name ?? "start-of-slide"}
-              next={children[i + 1]?.type.name ?? "end-of-slide"}
+              prev={
+                "#" +
+                (children[i - 1]?.type.name.toLowerCase() ?? "start-of-slide")
+              }
+              next={
+                "#" +
+                (children[i + 1]?.type.name.toLowerCase() ?? "end-of-slide")
+              }
             />
           </section>
         );
       })}
       <section id="end-of-slide">
-        <h1>End Of Slide</h1>
-        <a href={"#" + children[children.length - 1].type.name.toLowerCase()}>
-          Prev
-        </a>
-        <a href={"#" + children[0].type.name.toLowerCase()}>Back To Start</a>
+        <End
+          first={"#" + children[0].type.name.toLowerCase()}
+          last={"#" + children[children.length - 1].type.name.toLowerCase()}
+        ></End>
       </section>
       <section id="start-of-slide">
-        <h1>Start Of Slide</h1>
-        <a href={"#" + children[0].type.name.toLowerCase()}>Start</a>
+        <Start
+          first={"#" + children[0].type.name.toLowerCase()}
+          last={"#" + children[children.length - 1].type.name.toLowerCase()}
+        />
       </section>
     </>
   );
