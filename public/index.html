@@ -5,13 +5,31 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <section id="closing">
-      <h1>Thank You</h1>
-      <a href="#opening">⬅️</a>
-    </section>
     <section id="opening">
       <h1>Hello world</h1>
-      <a href="#closing">➡️</a>
+      <nav>
+        <a href="#illustration">next</a><a href="#start-of-slide">prev</a>
+      </nav>
+    </section>
+    <section id="illustration">
+      <h1>Illustration</h1>
+      <nav><a href="#example">next</a><a href="#opening">prev</a></nav>
+    </section>
+    <section id="example">
+      <h1>Example</h1>
+      <nav><a href="#closing">next</a><a href="#illustration">prev</a></nav>
+    </section>
+    <section id="closing">
+      <h1>Thank You</h1>
+      <nav><a href="#end-of-slide">next</a><a href="#example">prev</a></nav>
+    </section>
+    <section id="end-of-slide">
+      <h1>End Of Slide</h1>
+      <a href="#closing">Prev</a><a href="#opening">Back To Start</a>
+    </section>
+    <section id="start-of-slide">
+      <h1>Start Of Slide</h1>
+      <a href="#opening">Start</a>
     </section>
   </body>
 </html>

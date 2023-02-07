@@ -1,8 +1,7 @@
 import React from "react";
 
-export default () => (
-  <section id="closing">
+export const Closing = () => (
+  <>
     <h1>Thank You</h1>
-    <a href="#opening">⬅️</a>
-  </section>
+  </>
 );

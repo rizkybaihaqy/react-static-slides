@@ -1,29 +1,11 @@
 import React from "react";
-import * as fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+import Slides from "./slides.js";
+import { Closing } from "./slides/closing.js";
+import { Example } from "./slides/example.js";
+import { Illustration } from "./slides/illustration.js";
+import { Opening } from "./slides/opening.js";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const folderPath = path.join(__dirname, "slides");
-
-const getComponents = async () => {
-  const files = fs.readdirSync(folderPath);
-
-  const components = await Promise.all(
-    files.map(async (file) => {
-      const filePath = `${folderPath}/${file}`;
-      const module = await import(filePath);
-      return module.default;
-    })
-  );
-
-  return components;
-};
-
-export default async () => {
-  const components = await getComponents();
-  console.log(components);
-
+export const App = () => {
   return (
     <html lang="en">
       <head>
@@ -31,9 +13,12 @@ export default async () => {
         <link rel="stylesheet" href="style.css" />
       </head>
       <body>
-        {components.map((Component) => (
-          <Component key={Component.name} />
-        ))}
+        <Slides>
+          <Opening />
+          <Illustration />
+          <Example />
+          <Closing />
+        </Slides>
       </body>
     </html>
   );
