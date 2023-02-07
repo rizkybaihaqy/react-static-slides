@@ -1,12 +1,18 @@
-section {
-  padding: calc(6em + 5vw) 5vw 8vw 5vw;
-  /* ! Everything below is needed ! */
-  display: none;
+body {
   min-height: 100vh;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  display: none;
+}
+
 section:target {
-  /* Show section */
   display: block;
 }
 
@@ -14,7 +20,6 @@ section#start-of-slide {
   display: block;
 }
 
-/* When a section is shown, hide default home section */
 section:target ~ section#start-of-slide {
   display: none;
 }
