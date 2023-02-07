@@ -1,7 +1,7 @@
 import React, { isValidElement, ReactElement, ReactNode } from "react";
 import { Navigation } from "./navigation.js";
 
-export default ({ children }: { children: JSX.Element[] }) => {
+export const Slides = ({ children }: { children: JSX.Element[] }) => {
   return (
     <>
       {children.map((child, i) => {

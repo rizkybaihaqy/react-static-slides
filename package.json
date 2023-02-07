@@ -8,7 +8,7 @@
   "type": "module",
   "scripts": {
     "clean": "rm -rf dist",
-    "render": "npm run clean && tsc && node dist/render.js"
+    "render": "npm run clean && tsc && node dist/index.js"
   },
   "devDependencies": {
     "@types/node": "^18.11.19",
