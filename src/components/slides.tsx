@@ -1,28 +1,25 @@
 import React from "react";
 import { End } from "./end.js";
-import { Navigation } from "./navigation.js";
+import { Slide } from "./slide.js";
 import { Start } from "./start.js";
 
 export const Slides = ({ children }: { children: JSX.Element[] }) => {
   return (
     <>
-      {children.map((child, i) => {
-        return (
-          <section id={child.type.name.toLowerCase()} key={i}>
-            {child}
-            <Navigation
-              prev={
-                "#" +
-                (children[i - 1]?.type.name.toLowerCase() ?? "start-of-slide")
-              }
-              next={
-                "#" +
-                (children[i + 1]?.type.name.toLowerCase() ?? "end-of-slide")
-              }
-            />
-          </section>
-        );
-      })}
+      {children.map((child, i) => (
+        <Slide
+          key={i}
+          id={child.type.name.toLowerCase()}
+          prev={
+            "#" + (children[i - 1]?.type.name.toLowerCase() ?? "start-of-slide")
+          }
+          next={
+            "#" + (children[i + 1]?.type.name.toLowerCase() ?? "end-of-slide")
+          }
+        >
+          {child}
+        </Slide>
+      ))}
       <section id="end-of-slide">
         <End
           first={"#" + children[0].type.name.toLowerCase()}
