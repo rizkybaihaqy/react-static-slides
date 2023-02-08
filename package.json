@@ -1,10 +1,7 @@
 {
-  "name": "css-spa",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "",
+  "name": "react-static-slides",
+  "version": "0.0.1",
   "license": "ISC",
-  "description": "",
   "type": "module",
   "scripts": {
     "clean": "rm -rf dist",
