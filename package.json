@@ -8,16 +8,22 @@
   "type": "module",
   "scripts": {
     "clean": "rm -rf dist",
-    "render": "npm run clean && tsc && node dist/index.js"
+    "build": "npm run clean && tsc",
+    "render": "npx ts-node-esm ./src/bin/render.ts",
+    "dev": "nodemon -e ts,tsx --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/bin/www.ts"
   },
   "devDependencies": {
     "@types/node": "^18.11.19",
     "@types/prettier": "^2.7.2",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@types/serve-static": "^1.15.0",
+    "nodemon": "^2.0.20",
     "prettier": "^2.8.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "serve-static": "^1.15.0",
+    "ts-node": "^10.9.1",
     "typescript": "^4.9.5"
   }
 }
